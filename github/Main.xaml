@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="801,1015" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="801,1222" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="46">
+    <scg:List x:TypeArguments="x:String" Capacity="25">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -29,7 +29,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <sco:Collection x:TypeArguments="AssemblyReference">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="24">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -54,11 +54,12 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="376,950" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="376,1157" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="name" />
+      <Variable x:TypeArguments="x:String" Name="choice" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -73,7 +74,11 @@
     <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Welcome to all  aravind &quot;]" />
     <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[&quot;Aravind created the message box&quot;]" />
     <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;jayaprakash RPA The name is&quot;+name]" />
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;Jamuna addes&quot;]" />
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;welcome &quot;]" />
+    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,291" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Select your chouce" OptionsString="Aravind;Alia;prasanth" Title="Choice">
+      <ui:InputDialog.Result>
+        <OutArgument x:TypeArguments="x:String">[choice]</OutArgument>
+      </ui:InputDialog.Result>
+    </ui:InputDialog>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[choice]" />
   </Sequence>
 </Activity>
